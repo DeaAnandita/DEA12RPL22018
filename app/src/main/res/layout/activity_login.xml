@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Login"
     android:background="@color/white">
 
     <TextView
@@ -26,7 +25,7 @@
         android:layout_marginTop="15dp">
 
         <EditText
-            android:id="@+id/edEmail"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email" />
@@ -39,7 +38,7 @@
         android:layout_marginTop="20dp">
 
         <EditText
-            android:id="@+id/edPassword"
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password" />

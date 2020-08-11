@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     TextView Title;
 
@@ -19,16 +19,13 @@ public class SplashScreen extends AppCompatActivity {
         Title = (TextView) findViewById(R.id.txttitle);
 
 
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), Registrasi.class));
+                Intent intent = new Intent(SplashActivity.this, Login.class);
+                startActivity(intent);
                 finish();
             }
-        }, 3000L);
-
-        ProgressBar simpleProgressBar=(ProgressBar) findViewById(R.id.progressbar);
-        simpleProgressBar.setMax(100);
+        }, 2000);
     }
 }
