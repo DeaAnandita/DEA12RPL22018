@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditActivity"
+    android:orientation="vertical">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Edit Data"
+        android:textSize="25dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"/>
+
+
+    <EditText
+        android:layout_gravity="center"
+        android:id="@+id/txtemail"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/line"
+        android:hint="Email"
+        android:padding="15dp" />
+
+    <EditText
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Nama Lengkap"
+        android:id="@+id/txtnama"
+        android:background="@drawable/line"
+        android:padding="15dp"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="No. KTP"
+        android:id="@+id/txtnoktp"
+        android:background="@drawable/line"
+        android:padding="15dp"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="No. HP"
+        android:id="@+id/txtnohp"
+        android:background="@drawable/line"
+        android:padding="15dp"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Alamat"
+        android:id="@+id/txtalamat"
+        android:background="@drawable/line"
+        android:padding="15dp"
+        android:layout_marginTop="8dp"/>
+
+
+    <Button
+        android:layout_gravity="center"
+        android:id="@+id/btn_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/button_login"
+        android:text="EDIT"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>
