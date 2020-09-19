@@ -78,7 +78,7 @@ public class EditActivity extends AppCompatActivity {
                                     JSONObject hasil = response.getJSONObject("hasil");
                                     boolean sukses = hasil.getBoolean("respon");
                                     if (sukses) {
-                                        Intent returnIntent = new Intent(EditActivity.this, DetailCustomer.class);
+                                        Intent returnIntent = new Intent(EditActivity.this, ListActivity.class);
                                         returnIntent.putExtra("refresh", "refresh");
                                         setResult(23, returnIntent);
                                         finish();

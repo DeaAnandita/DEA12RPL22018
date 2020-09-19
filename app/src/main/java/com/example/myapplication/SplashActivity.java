@@ -16,7 +16,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        Title = (TextView) findViewById(R.id.txttitle);
+        Title = findViewById(R.id.txttitle);
 
 
         new Handler().postDelayed(new Runnable() {
