@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,10 @@ import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.UserViewHolder> {
 
-    private ArrayList<ModelMobil> dataList;
+    private ArrayList<Model> dataList;
     View viewku;
 
-    public Adapter(ArrayList<ModelMobil> dataList) {
+    public Adapter(ArrayList<Model> dataList) {
         this.dataList = dataList;
     }
 
@@ -31,9 +32,22 @@ public class Adapter extends RecyclerView.Adapter<Adapter.UserViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final UserViewHolder holder, final int position) {
         holder.txtemail.setText(dataList.get(position).getEmail());
         holder.txtnama.setText(dataList.get(position).getNama());
+        holder.cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dea = new Intent(holder.itemView.getContext(), DetailCustomer.class);
+                dea.putExtra("id", dataList.get(position).getId());
+                dea.putExtra("nama", dataList.get(position).getNama());
+                dea.putExtra("email", dataList.get(position).getEmail());
+                dea.putExtra("nohp", dataList.get(position).getNoHp());
+                dea.putExtra("alamat", dataList.get(position).getAlamat());
+                dea.putExtra("noktp", dataList.get(position).getNoKtp());
+                holder.itemView.getContext().startActivity(dea);
+            }
+        });
     }
 
     @Override

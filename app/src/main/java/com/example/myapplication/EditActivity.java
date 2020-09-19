@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,13 +21,21 @@ import org.json.JSONObject;
 
 public class EditActivity extends AppCompatActivity {
 
-    Button btn_edit;
-    EditText txtemail, txtnama, txtnoktp, txtnohp, txtalamat;
+    Button btnUpdate;
+    EditText edEmail, edNmaLengkap, edNoKtp, edNoHp, edAlamat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+
+        edEmail = findViewById(R.id.edEmail1);
+        edNmaLengkap = findViewById(R.id.edNmaLengkap1);
+        edNoKtp = findViewById(R.id.edNoKtp1);
+        edNoHp = findViewById(R.id.edNoHp1);
+        edAlamat = findViewById(R.id.edAlamat1);
+        btnUpdate = findViewById(R.id.btnUpdate);
+
         Bundle extras = getIntent().getExtras();
 
         final String id = extras.getString("id");
@@ -36,29 +45,29 @@ public class EditActivity extends AppCompatActivity {
         final String nohp = extras.getString("nohp");
         final String alamat = extras.getString("alamat");
 
-        txtemail.setText(email);
-        txtnama.setText(nama);
-        txtnoktp.setText(noktp);
-        txtnohp.setText(nohp);
-        txtalamat.setText(alamat);
+        edEmail.setText(email);
+        edNmaLengkap.setText(nama);
+        edNoKtp.setText(noktp);
+        edNoHp.setText(nohp);
+        edAlamat.setText(alamat);
 
-        txtemail = findViewById(R.id.txtemail);
-        txtnama = findViewById(R.id.txtnama);
-        txtnoktp = findViewById(R.id.txtnoktp);
-        txtnohp = findViewById(R.id.txtnohp);
-        txtalamat = findViewById(R.id.txtalamat);
-        btn_edit = findViewById(R.id.btn_edit);
 
-        btn_edit.setOnClickListener(new View.OnClickListener() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setTitle("Data Customer");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AndroidNetworking.post("https://192.168.43.32/RentalMobil/EditData.php")
+                AndroidNetworking.post("http://192.168.6.159/RentalMobil/EditData.php")
                         .addBodyParameter("id", id)
-                        .addBodyParameter("email", txtemail.getText().toString())
-                        .addBodyParameter("nama", txtnama.getText().toString())
-                        .addBodyParameter("noktp", txtnoktp.getText().toString())
-                        .addBodyParameter("nohp", txtnohp.getText().toString())
-                        .addBodyParameter("alamat", txtalamat.getText().toString())
+                        .addBodyParameter("email", edEmail.getText().toString())
+                        .addBodyParameter("nama", edNmaLengkap.getText().toString())
+                        .addBodyParameter("noktp", edNoKtp.getText().toString())
+                        .addBodyParameter("nohp", edNoHp.getText().toString())
+                        .addBodyParameter("alamat", edAlamat.getText().toString())
                         .setPriority(Priority.LOW)
                         .build()
                         .getAsJSONObject(new JSONObjectRequestListener() {
@@ -69,7 +78,7 @@ public class EditActivity extends AppCompatActivity {
                                     JSONObject hasil = response.getJSONObject("hasil");
                                     boolean sukses = hasil.getBoolean("respon");
                                     if (sukses) {
-                                        Intent returnIntent = new Intent();
+                                        Intent returnIntent = new Intent(EditActivity.this, DetailCustomer.class);
                                         returnIntent.putExtra("refresh", "refresh");
                                         setResult(23, returnIntent);
                                         finish();
@@ -79,7 +88,7 @@ public class EditActivity extends AppCompatActivity {
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
-                                    System.out.println("ttttt" + e.getMessage());
+                                    System.out.println("DEA" + e.getMessage());
                                     Toast.makeText(EditActivity.this, "Edit gagal", Toast.LENGTH_SHORT).show();
                                 }
                             }

@@ -25,6 +25,7 @@
 
         <EditText
             android:id="@+id/edEmail"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email" />
@@ -34,12 +35,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        app:passwordToggleEnabled="true">
 
         <EditText
             android:id="@+id/edPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="Password" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,12 +103,29 @@
         android:text="Daftar"
         android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/txtsdhakun"
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Belum punya akun?"
+            android:textSize="16dp" />
+
+        <TextView
+        android:id="@+id/txtsignin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Sudah punya akun?  Masuk"
-        android:textSize="16dp" />
+        android:text="SIGN IN"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:textSize="18dp" />
+    </LinearLayout>
 
 </LinearLayout>

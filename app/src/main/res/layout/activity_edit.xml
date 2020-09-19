@@ -17,71 +17,74 @@
         android:textStyle="bold"/>
 
 
-    <EditText
-        android:layout_gravity="center"
-        android:id="@+id/txtemail"
-        android:layout_marginTop="20dp"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:background="@drawable/line"
-        android:hint="Email"
-        android:padding="15dp" />
+        android:layout_marginTop="20dp">
 
-    <EditText
-        android:layout_gravity="center"
+        <EditText
+            android:id="@+id/edEmail1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:hint="Nama Lengkap"
-        android:id="@+id/txtnama"
-        android:background="@drawable/line"
-        android:padding="15dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_margin="20dp">
 
-    <EditText
-        android:layout_gravity="center"
+        <EditText
+            android:id="@+id/edNmaLengkap1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Lengkap" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:hint="No. KTP"
-        android:id="@+id/txtnoktp"
-        android:background="@drawable/line"
-        android:padding="15dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginHorizontal="20dp">
 
-    <EditText
-        android:layout_gravity="center"
+        <EditText
+            android:id="@+id/edNoKtp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="No. KTP" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:hint="No. HP"
-        android:id="@+id/txtnohp"
-        android:background="@drawable/line"
-        android:padding="15dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_margin="20dp">
 
-    <EditText
-        android:layout_gravity="center"
+        <EditText
+            android:id="@+id/edNoHp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="No. HP" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:hint="Alamat"
-        android:id="@+id/txtalamat"
-        android:background="@drawable/line"
-        android:padding="15dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginHorizontal="20dp">
 
+        <EditText
+            android:id="@+id/edAlamat1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Alamat" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:layout_gravity="center"
-        android:id="@+id/btn_edit"
+        android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_margin="20dp"
         android:background="@drawable/button_login"
-        android:text="EDIT"
+        android:text="UPDATE"
         android:textColor="@color/white" />
 
 
