@@ -72,7 +72,7 @@ public class Login extends AppCompatActivity {
                 String password = etPassword.getText().toString().trim();
                 progressBar.setTitle("Logging In...");
                 progressBar.show();
-                AndroidNetworking.post("http://192.168.6.159/RentalMobil/LoginCostumer.php")
+                AndroidNetworking.post("http://192.168.6.114/RentalMobil/LoginCostumer.php")
                         .addBodyParameter("email" , email)
                         .addBodyParameter("password" , password)
                         .setPriority(Priority.LOW)

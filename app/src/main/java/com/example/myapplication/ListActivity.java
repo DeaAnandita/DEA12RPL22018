@@ -64,7 +64,7 @@ public class ListActivity extends AppCompatActivity {
         datalist = new ArrayList<>();
         Log.d("dea", "onCreate: ");
 
-        AndroidNetworking.post("http://192.168.6.159/RentalMobil/ViewData.php")
+        AndroidNetworking.post("http://192.168.6.114/RentalMobil/ViewData.php")
                 .addBodyParameter("roleuser", "2")
                 .setTag("test")
                 .setPriority(Priority.MEDIUM)

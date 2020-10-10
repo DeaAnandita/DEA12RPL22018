@@ -64,7 +64,7 @@ public class Registrasi extends AppCompatActivity {
                 String alamat = edAlamat.getText().toString().trim();
                 progressBar.setTitle("Register In...");
                 progressBar.show();
-                AndroidNetworking.post("http://192.168.6.159/RentalMobil/RegisterCostumer.php")
+                AndroidNetworking.post("http://192.168.6.114/RentalMobil/RegisterCostumer.php")
                         .addBodyParameter("email", email)
                         .addBodyParameter("password", password)
                         .addBodyParameter("nama", nama)
