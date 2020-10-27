@@ -61,7 +61,7 @@ public class EditActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AndroidNetworking.post("http://192.168.6.159/RentalMobil/EditData.php")
+                AndroidNetworking.post("http://192.168.6.114/RentalMobil/EditData.php")
                         .addBodyParameter("id", id)
                         .addBodyParameter("email", edEmail.getText().toString())
                         .addBodyParameter("nama", edNmaLengkap.getText().toString())
